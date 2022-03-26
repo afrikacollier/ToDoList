@@ -77,18 +77,35 @@ function addItem(e){
     let todoList = document.querySelector("#items");
     todoList.appendChild(newli);
     //delete input field after newli is added
-    //input.value = ""; can't define inside the local scope will set everything to empty
-    
-}
-
-function deleteinputfield(e) {
-    let input = document.getElementById("item").value;
-    addItem
-    input = " ";
+    //input.value = ""; can't define here will set everything to empty
+    //maybe use input.remove(); kind of like pop in Arrays? 
+    //remove saves what was left in an array
+    newItem.remove();
 }
 
 //delete when clicking on list group items
-function addItemtwo(e) {
-    let li = e.target.parentElement;
-    itemList.removeChild(li);
-}
+//function addItemtwo(e) {
+//    let li = e.target.parentElement;
+//    for(itemList.removeChild(li);
+//}
+
+//let listItems = document.getElementsByTagName("li"); 
+//for (let i = 0; i < listItems.length; i++) {
+//listItems[i].onclick = function() {this.parentNode.removeChild(this);}
+//}
+
+//<body>
+//<div id="to-do" class="header">
+//<h2>To-Do List</h2>
+//<input type="text" id="myInput" placeholder="Task...">
+//<button>Add</button>
+//</div>
+      
+//<ul id="list">
+ //       <li>Go to the store</li>
+ //       <li>Get oil changed</li>
+ //       <li>Go to the gym</li>
+ //       <li>Do homework</li>
+ //       <li>Wash dishes</li>
+ //     </ul>
+
