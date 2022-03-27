@@ -14,31 +14,17 @@ cross it out, then remove it after 1 second.
 project as well as a screenshot of the project 
 working in the browser*/
 
-
-
-/*let lis = [...document.querySelectorAll('list-group-item')];
-
-for (let li of lis) {
-  li.addEventListener('click', function() {
-    this.parentNode.pop(this);
-})
-}*/
-
+//make form an HTMLElement (I think it should be an object of an HTMLElement)
+//HTMLElement -> Element -> Node -> EventTarget
 let form = document.getElementById("button-one");
-let itemList = document.querySelector(".list-group-item");
-//let inputdelete = document.getElementById("whateverform");
-
 // Form submit event
 form.addEventListener('click', addItem);
 
 
-// For submit event input delete
-//inputdelete.addEventListener('submit', deleteinputfield);
-
 // Add item
 function addItem(e){
     e.preventDefault();
-
+    
     // Get input value (I had to use the first input of my form since type='text')
     let newItem = document.getElementById("item").value;
     // Create new li element
@@ -50,12 +36,11 @@ function addItem(e){
     //need to add child element including child element content to end of list
     let todoList = document.querySelector("#items");
     todoList.appendChild(newli);
-
+    //Remove new item on click event
     newli.addEventListener('click', removeListItem);
     function removeListItem(e){
       let target = e.currentTarget.remove();
     }
-
 }
 
 //Remove item
@@ -64,6 +49,13 @@ for (let i=0; i < listItems.length; i++) {
     listItems[i].addEventListener('click', removeListItem);
  }
 
- function removeListItem(e){
-     let target = e.currentTarget.remove();
- }
+function removeListItem(e){
+  let target = e.currentTarget.remove();
+}
+
+
+let inputDelete = document.getElementById("button-one");
+inputDelete.addEventListener("click", deleteInputValue)
+function deleteInputValue(e){
+  document.getElementById("item").value = "";
+}
